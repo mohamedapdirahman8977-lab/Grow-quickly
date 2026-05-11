@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "createdAt"]
+    },
+    "FoodAnalysis": {
+      "title": "Food Analysis",
+      "description": "Historical food analysis records",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "foodName": { "type": "string" },
+        "healthScore": { "type": "number" },
+        "calories": { "type": "string" },
+        "ingredients": { "type": "array", "items": { "type": "string" } },
+        "pros": { "type": "array", "items": { "type": "string" } },
+        "cons": { "type": "array", "items": { "type": "string" } },
+        "recommendation": { "type": "string" },
+        "isSafe": { "type": "boolean" },
+        "imageUrl": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "foodName", "healthScore", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/users/{userId}/history/{analysisId}": {
+      "schema": "FoodAnalysis",
+      "description": "User's analysis history"
+    }
+  }
+}

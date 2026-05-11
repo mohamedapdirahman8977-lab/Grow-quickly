@@ -1,0 +1,13 @@
+{
+  "name": "Cunto Hubin",
+  "description": "An app designed to verify food quality and nutrition using AI, including a BMI calculator.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "AI-powered food analysis",
+    "Nutrition scanning",
+    "Ingredient safety check",
+    "BMI Calculator"
+  ]
+}
